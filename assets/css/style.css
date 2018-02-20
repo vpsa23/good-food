@@ -1,0 +1,118 @@
+body{
+   text-align: center;
+  width: 100%;
+  height: 100vh; /*altura del color de fondo*/
+    background-image: url("../img/fondo.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.idioma{
+  width: 100px;
+  height: 50px;
+  margin-top: 4%;
+}
+
+/*icono de flecha*/
+.fa-angle-down {
+  color: #fff;
+}
+
+.form-control{
+  background:rgba(128,128,128, 0.8);
+  /*width: 280px;*/
+  margin-bottom: 2%;
+  margin-top: 2%;
+}
+
+
+.form-control::placeholder{
+  padding-left: 5px;
+  font-size: 40px;
+  color:black;
+}
+
+
+#nombre{
+  margin-top: 80px;
+  height: 100px;
+  margin-bottom: 10%;
+  
+}
+
+#correo,#clave{
+  margin-top: 20px;
+  height: 100px;
+  margin-bottom: 10%;
+}
+
+.imagen{
+  /*width: 440px;*/
+  width: 100%;
+  height:230px;
+  margin-top: 40px;
+}
+
+.btn-outline-light{
+  /*width: 280px;*/
+  background-color: black;
+  width: 100%;
+  height: 115%;
+  color: white;
+  border-color: #fff;
+  font-size: 35px;
+  margin-top: 2%;
+}
+
+.informacion{
+  font-size: 29px;
+  color: white;
+  margin-top: 7%;
+}
+
+hr{
+  width: 90%;
+  background-color: white;
+}
+
+.titulo{
+  margin-top: 100px;
+  font-size: 40px;
+  color: white;
+}
+
+
+#rowLine {
+  margin-top: 5%;
+}
+
+#line,#line2 {
+  color: #fff;
+}
+
+#pPostLine {
+  color: #fff;
+  font-size: 32px;
+}
+
+#rowFacebook {
+  margin-top: 3%;
+}
+
+#ultimo {
+  color: #fff;
+  font-size: 37px;
+}
+
+#footer {
+  border-top: 1px solid #fff;
+  margin-top: 40%;
+}
+
+#footerParagraph {
+  color: #fff;
+  font-size: 33px;
+  margin-top: 3%;
+}
+
