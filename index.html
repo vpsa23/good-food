@@ -5,17 +5,99 @@
   <meta charset="UTF-8">
   <meta name="description" content="Ejemplo HTML5"/>
   <meta name="keywords" content="HTML5, CSS3, javascript"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.rawgit.com/arafkarim/BootstrapPlusPlus/2d8d0b9d/bpp/bpp.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-
-
-<!--menu -->
-  <nav></nav>
+  <header>
+    <div class="row">
+      <div class="col-sm-12">
+        <p class="idioma">Idioma español(Español)</p>
+      </div>
+    </div>
+  </header>
 
 <!--Información Principal -->
+  <section>
+    <div class="principal">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-md-12 divs">
+            <img id="logo" src="assets/img/logo.png" alt="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-md-12 divs">
+            <h3 id="welcome">¡BIENVENIDO!</h3>
+            <h5 id="content">Encuentra restaurantes de una manera más sencilla</h5>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 divs">
+            <button type="button" class="btn btn-success btn-sm btn-lg" data-toggle="modal" data-target=".bd-example-modal-lg" id="btnSesion">Inicia Sesión</button>
+          </div>
+          <div class="col-sm-10">
+            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="col-sm-12 col-md-12 col-lg-12">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Modal title</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-12">
+                    <input type="text" class="form-control" id="correo" placeholder="email">
+                  </div>
+                    <div class="col-sm-12 col-md-12 divs">
+                      <input type="text" class="form-control" id="clave" placeholder="Clave">
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                      <div class="modal-footer">
+                        <button type="button" id="btn-login" class="btn btn-primary">Iniciar Sesion</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" id="rowLine">
+          <div class="col-sm-5 col-md-5 col-lg-5" id="line">
+            <hr>
+          </div>
+          <div class="col-sm-2 col-md-2 col-md-2" id="pPostLine">
+            <p>o</p>
+          </div>
+          <div class="col-sm-5 col-md-5 col-lg-5" id="line2">
+            <hr>
+          </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12 divs">
+            <button type="button" class="btn btn-primary btn-sm btn-lg" id="btnSesionFace"><i class="fab fa-facebook-square"></i>Conectar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-12">
+          <p>Si no tienes cuenta <a href="#">Registrese</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<!--Información Principal -->
+<!--
   <section>
     <div class="principal">
       <div class="container">
@@ -49,7 +131,7 @@
       </div>
     </div>
   </section>
-
+  -->
  
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
