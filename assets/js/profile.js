@@ -59,6 +59,7 @@ $(document).ready(function(){
 // guardo con set el objeto usuario con todos los datos de los usuarios
       usuarios.child(nick).set(usuario);
 
+
       document.location.replace('restaurant.html')
 
     })
