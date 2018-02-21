@@ -54,8 +54,40 @@ $(document).ready(() => {
     processData: true,
     success: (categories) => {
       console.log(categories);
-      
-    }
+      for (let i in categories) {
+        let categorias = `
+          <div class="row">
+            <div class="col-sm-4 col-md-4 col-lg-4">
+              <h4>${categories[i][0].categories.name}</h4>
+              <img src="assets/img/delivery.jpg" alt="" />
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+              <h4>${categories[i][5].categories.name}</h4>
+              <img src="assets/img/café.png" alt="" />
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+              <h4>${categories[i][7].categories.name}</h4>
+              <img src="assets/img/breakfast.png" alt="" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4 col-md-4 col-lg-4">
+              <h4>${categories[i][8].categories.name}</h4>
+              <img src="assets/img/lunch.png" alt="" />
+            </div>
+            <div class="col-sm-12">
+              <h4>${categories[i][9].categories.name}</h4>
+              <img src="assets/img/dinner.jpg" alt="" />
+            </div>
+            <div class="col-sm-12">
+              <h4>${categories[i][10].categories.name}</h4>
+              <img src="assets/img/pubs.png" alt="" />
+            </div>
+          </div>
+        `;
+        $('#containerCategories').append(categorias);
+        }
+      }
   });
 
 
