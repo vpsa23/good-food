@@ -8,24 +8,24 @@ body{
 }
 
 #degrade {
-  background: rgba(43,43,43,0.61);
-  background: -moz-linear-gradient(-45deg, rgba(43,43,43,0.61) 0%, rgba(43,43,43,0.23) 98%, rgba(19,19,19,0.22) 100%);
-  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(43,43,43,0.61)), color-stop(98%, rgba(43,43,43,0.23)), color-stop(100%, rgba(19,19,19,0.22)));
-  background: -webkit-linear-gradient(-45deg, rgba(43,43,43,0.61) 0%, rgba(43,43,43,0.23) 98%, rgba(19,19,19,0.22) 100%);
-  background: -o-linear-gradient(-45deg, rgba(43,43,43,0.61) 0%, rgba(43,43,43,0.23) 98%, rgba(19,19,19,0.22) 100%);
-  background: -ms-linear-gradient(-45deg, rgba(43,43,43,0.61) 0%, rgba(43,43,43,0.23) 98%, rgba(19,19,19,0.22) 100%);
-  background: linear-gradient(135deg, rgba(43,43,43,0.61) 0%, rgba(43,43,43,0.23) 98%, rgba(19,19,19,0.22) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2b2b2b', endColorstr='#131313', GradientType=1 );
+  background: rgba(76,76,76,1);
+  background: -moz-linear-gradient(-45deg, rgba(76,76,76,1) 0%, rgba(102,102,102,1) 0%, rgba(89,89,89,1) 0%, rgba(17,17,17,1) 0%, rgba(17,17,17,0.39) 1%, rgba(28,28,28,0.39) 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(76,76,76,1)), color-stop(0%, rgba(102,102,102,1)), color-stop(0%, rgba(89,89,89,1)), color-stop(0%, rgba(17,17,17,1)), color-stop(1%, rgba(17,17,17,0.39)), color-stop(100%, rgba(28,28,28,0.39)));
+  background: -webkit-linear-gradient(-45deg, rgba(76,76,76,1) 0%, rgba(102,102,102,1) 0%, rgba(89,89,89,1) 0%, rgba(17,17,17,1) 0%, rgba(17,17,17,0.39) 1%, rgba(28,28,28,0.39) 100%);
+  background: -o-linear-gradient(-45deg, rgba(76,76,76,1) 0%, rgba(102,102,102,1) 0%, rgba(89,89,89,1) 0%, rgba(17,17,17,1) 0%, rgba(17,17,17,0.39) 1%, rgba(28,28,28,0.39) 100%);
+  background: -ms-linear-gradient(-45deg, rgba(76,76,76,1) 0%, rgba(102,102,102,1) 0%, rgba(89,89,89,1) 0%, rgba(17,17,17,1) 0%, rgba(17,17,17,0.39) 1%, rgba(28,28,28,0.39) 100%);
+  background: linear-gradient(135deg, rgba(76,76,76,1) 0%, rgba(102,102,102,1) 0%, rgba(89,89,89,1) 0%, rgba(17,17,17,1) 0%, rgba(17,17,17,0.39) 1%, rgba(28,28,28,0.39) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#1c1c1c', GradientType=1 );
   width: 142%;
-  margin-top: -50%;
+  margin-top: -60%;
   margin-left: -21%;
-  height: 100vh;
+  height: 102vh;
 }
 
 /*header*/
 .idioma{
-  font-size: 2.5em;
-  color: #fff;
+  font-size: 1.2em;
+  color: #FFF;
   height: 50px;
   margin-top: 4%;
 }
@@ -36,17 +36,18 @@ body{
 }
 
 #logo {
-  margin-top: 10%;
+  margin-top: %;
+  width: 50%;
 }
 
 #welcome {
-  font-size: 4em;
+  font-size: 2.5em;
   color: #fff;
-  margin-top: 9%;
+  margin-top: -110%;
 }
 
 #content {
-  font-size: 3em;
+  font-size: 1.5em;
   color: #fff;
 }
 
@@ -66,36 +67,47 @@ button {
   margin-top: 10%;
 }
 
-#line,#line2 {
-  margin-top: 5%;
+hr {
+  background-color: #FFF;
+}
+
+#line{
+  margin-top: -70%;
+  width: 40%;
+}
+
+#line2 {
+  margin-top: -70%;
+  margin-left: 53%;
+  width: 40%;
 }
 
 #pPostLine {
-  margin-top: 4%;
+  margin-top: -72%;
+  margin-left: -3%;
+  font-size: 2em;
+  color: #FFF;
 }
 
-#btnSesion,#btnSesionFace{
-  font-size: 2.2em;
+#btnSesion {
+  margin-top: -160%;
+  height: 7vh;
+  font-size: 1.5em;
+  border-radius: 6px;
+}
+
+#btnSesionFace {
+  font-size: 1em;
+  margin-top: -550%;
+  margin-left: 125%;
+  width: 200%;
+  height: 5vh;
 }
 
 
 #fbook {
   margin-right: 2%;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 .form-control{
@@ -133,26 +145,10 @@ button {
   margin-top: 40px;
 }
 
-.btn-outline-light{
-  /*width: 280px;*/
-  background-color: black;
-  width: 100%;
-  height: 115%;
-  color: white;
-  border-color: #fff;
-  font-size: 35px;
-  margin-top: 2%;
-}
-
 .informacion{
   font-size: 29px;
   color: white;
   margin-top: 7%;
-}
-
-hr{
-  width: 90%;
-  background-color: white;
 }
 
 .titulo{
@@ -161,37 +157,44 @@ hr{
   color: white;
 }
 
-
-#rowLine {
-  margin-top: 5%;
-}
-
-#line,#line2 {
-  color: #fff;
-}
-
-#pPostLine {
-  color: #fff;
-  font-size: 32px;
-}
-
-#rowFacebook {
-  margin-top: 3%;
-}
-
 #ultimo {
   color: #fff;
   font-size: 37px;
 }
 
-#footer {
-  border-top: 1px solid #fff;
-  margin-top: 40%;
+footer {
+  margin-top: -50%;
+  color: #FFF;
 }
 
-#footerParagraph {
-  color: #fff;
-  font-size: 33px;
-  margin-top: 3%;
+footer a {
+  font-weight: 700;
 }
 
+
+/*MODAL*/
+.modal {
+  width: 80%;
+  height: 100vh;
+}
+
+#correo {
+  width: 100%;
+  height: 5.7vh;
+}
+
+#clave {
+  width: 100%;
+  height: 5.7vh;
+  margin-top: -5%;
+}
+
+#btn-login {
+  width: 25%;
+  margin-left: -300%;
+}
+
+#registro {
+  width: 25%;
+  margin-left: 50%;
+}
