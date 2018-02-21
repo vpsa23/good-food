@@ -1,0 +1,39 @@
+body{
+  background-image: url(../img/fondo-madera.png);
+  background-repeat: no-repeat;
+  background-size: 200vh;
+  margin-left: -5%;
+}
+
+.pos-f-t {
+  background-color: none;
+  width: 50%;
+  height: 10vh;
+}
+
+#btn1 {
+  border: 2.5px solid #52BE80;
+  margin-top: 3%;
+}
+
+#text{
+  text-align: center;
+  color: #52BE80;
+  font-family: 'Englebert', sans-serif;
+}
+
+#photo {
+  border-radius: 85px;
+  width: 55%;
+}
+
+#list {
+  list-style: none;
+  margin-left: -55%;
+}
+
+#display {
+  width: 50%;
+  height: 50%;
+  color: #FFF;
+}

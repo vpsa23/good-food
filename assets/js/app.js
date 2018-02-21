@@ -1,29 +1,35 @@
-$(document).ready(function() {
+$(document).ready(() => {
 
-let url = 'https://developers.zomato.com/api/v2.1/restaurant?res_id=16774318';
-console.log(url);
+$.ajax({
+  type: "GET", //it's a GET request API
+  headers: {
+    'X-Zomato-API-Key': '5e26f0851bb93b15813c1f2b7af9f77a'
+  },
+  url: 'https://developers.zomato.com/api/v2.1/restaurant?res_id=${data}',
+  dataType: 'json',
+  data: {
+     res_id: '16774318',
+     res_id: '16782899',
+  },
+  processData: true,
+  success: function(data) {
+    console.log(data);
+  }
+});
 
-  /*
-  function getNews() {
- const articleRequest = new XMLHttpRequest();
- articleRequest.open('GET', `https://developers.zomato.com/api/v2.1/restaurant?res_id=16774318`);
- articleRequest.onload = addNews;
- articleRequest.onerror = handleError
- articleRequest.send();
-}
 
-function handleError() {
-  console.log('Se ha presentado un error');
-}
-
-function addNews() {
-  const data = JSON.parse(this.responseText);
-  const response = data.response;
-  console.log(response);
-  
-}
-
-getNews();
-*/
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
 
