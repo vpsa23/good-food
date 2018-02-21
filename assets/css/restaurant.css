@@ -37,3 +37,41 @@ body{
   height: 50%;
   color: #FFF;
 }
+
+/*estilos del input*/
+#search {
+  border: 1px solid #fff;
+  border-radius: 0.5em;
+  width: 75%;
+  margin-left: 15%;
+  margin-top: 25%;
+}
+
+/*estilos de ul*/
+.list-group {
+  background-color: #F3F3F3;
+  width: 81%;
+  margin-top: -0.1%;
+  margin-left: 12%;
+  border: 1px solid transparent;
+  border-radius: 0.2em;
+}
+
+/*estilos de los li del input*/
+.label {
+  list-style: none;
+  margin-left: 5%;
+}
+
+.list-group-item {
+  margin-top: 2%;
+  width: 90%;
+  border: 1px solid transparent;
+  border-radius: 0.5em;
+  margin-left: 5%;
+}
+
+/*img de los input*/
+.imgLi {
+  width: 12%;
+}
