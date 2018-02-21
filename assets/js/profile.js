@@ -1,5 +1,6 @@
 // Inicializo Firebase
 var usuarioLogueado="";
+var rutaFoto=""
 var config = {
     apiKey: "AIzaSyBwJ7zG8LUwDwLCRsikvMye3pNfGABr9Zo",
     authDomain: "good-food-2777b.firebaseapp.com",
@@ -66,6 +67,29 @@ $(document).ready(function(){
 
   
 })    
+
+
+// función que se encargará de subir el archivo
+    function subirArchivo(archivo, nick) {
+      // creo una referencia/ruta/carpeta/repositorio al lugar donde guardaremos el archivo
+      var rutaServer = dbFotos.ref('perfiles').child(nick);
+      // Comienzo la tarea de upload/Subiendo la foto
+      var uploadTask = rutaServer.put(archivo);
+      // defino un evento para saber qué pasa con ese upload iniciado
+      uploadTask.on('state_changed', null,
+        function(error){
+          console.log('Error al subir el archivo', error);
+        },
+        function(){
+          console.log('Subida completada');
+          //mensajeFinalizado(uploadTask.snapshot.downloadURL, uploadTask.snapshot.totalBytes);
+          //Guardo la ruta donde quedo registrada la foto en el servidor
+          //snapshot.downloadURL es el equivalente a ss recasta la foto
+          rutaFoto = uploadTask.snapshot.downloadURL
+        }
+      );
+    }
+
 
 function cargaDatos(){
        //console.log("Usuario: "+sessionStorage['usuarioLogueado']) 

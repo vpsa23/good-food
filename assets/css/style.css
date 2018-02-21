@@ -7,60 +7,39 @@ body{
   background-repeat: no-repeat;
 }
 
-#degrade {
-  background: rgba(76,76,76,1);
-  background: -moz-linear-gradient(-45deg, rgba(76,76,76,1) 0%, rgba(102,102,102,1) 0%, rgba(89,89,89,1) 0%, rgba(17,17,17,1) 0%, rgba(17,17,17,0.39) 1%, rgba(28,28,28,0.39) 100%);
-  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(76,76,76,1)), color-stop(0%, rgba(102,102,102,1)), color-stop(0%, rgba(89,89,89,1)), color-stop(0%, rgba(17,17,17,1)), color-stop(1%, rgba(17,17,17,0.39)), color-stop(100%, rgba(28,28,28,0.39)));
-  background: -webkit-linear-gradient(-45deg, rgba(76,76,76,1) 0%, rgba(102,102,102,1) 0%, rgba(89,89,89,1) 0%, rgba(17,17,17,1) 0%, rgba(17,17,17,0.39) 1%, rgba(28,28,28,0.39) 100%);
-  background: -o-linear-gradient(-45deg, rgba(76,76,76,1) 0%, rgba(102,102,102,1) 0%, rgba(89,89,89,1) 0%, rgba(17,17,17,1) 0%, rgba(17,17,17,0.39) 1%, rgba(28,28,28,0.39) 100%);
-  background: -ms-linear-gradient(-45deg, rgba(76,76,76,1) 0%, rgba(102,102,102,1) 0%, rgba(89,89,89,1) 0%, rgba(17,17,17,1) 0%, rgba(17,17,17,0.39) 1%, rgba(28,28,28,0.39) 100%);
-  background: linear-gradient(135deg, rgba(76,76,76,1) 0%, rgba(102,102,102,1) 0%, rgba(89,89,89,1) 0%, rgba(17,17,17,1) 0%, rgba(17,17,17,0.39) 1%, rgba(28,28,28,0.39) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#1c1c1c', GradientType=1 );
-  width: 142%;
-  margin-top: -60%;
-  margin-left: -21%;
-  height: 102vh;
-}
-
 /*header*/
 .idioma{
   font-size: 1.2em;
   color: #FFF;
+  width: 70%;
   height: 50px;
-  margin-top: 4%;
-}
-
-/*icono de flecha*/
-.fa-angle-down {
-  color: #fff;
+  margin-top: 8%;
+  margin-left: 15%;
 }
 
 #logo {
-  margin-top: %;
   width: 50%;
+  margin-top: -5%;
 }
+
+/*SECTION*/
 
 #welcome {
   font-size: 2.5em;
+  width: 70%;
+  margin-left: 15%;
   color: #fff;
-  margin-top: -110%;
 }
 
 #content {
   font-size: 1.5em;
   color: #fff;
+  width: 80%;
+  margin-left: 9%;
 }
 
 .divs {
   margin-top: 5%;
-}
-
-button {
-  width: 75%;
-  height: 115%;
-  color: white;
-  border-color: #fff;
-  margin-top: 2%;
 }
 
 #rowLine {
@@ -72,105 +51,44 @@ hr {
 }
 
 #line{
-  margin-top: -70%;
   width: 40%;
+  margin-left: 3%
 }
 
 #line2 {
-  margin-top: -70%;
-  margin-left: 53%;
   width: 40%;
 }
 
 #pPostLine {
-  margin-top: -72%;
-  margin-left: -3%;
-  font-size: 2em;
+  width: 2.5%;
+  font-size: 1.5em;
   color: #FFF;
 }
 
 #btnSesion {
-  margin-top: -160%;
   height: 7vh;
+  width: 70%;
   font-size: 1.5em;
   border-radius: 6px;
 }
 
 #btnSesionFace {
   font-size: 1em;
-  margin-top: -550%;
-  margin-left: 125%;
   width: 200%;
   height: 5vh;
+  margin-left: 150%;
 }
 
-
-#fbook {
-  margin-right: 2%;
-}
-
-
-.form-control{
-  background:rgba(128,128,128, 0.8);
-  /*width: 280px;*/
-  margin-bottom: 2%;
+#registrate {
+  width: 80%;
+  color: #FFF;
+  margin-left: 10%;
   margin-top: 2%;
 }
 
-
-.form-control::placeholder{
-  padding-left: 5px;
-  font-size: 40px;
-  color:black;
-}
-
-
-#nombre{
-  margin-top: 80px;
-  height: 100px;
-  margin-bottom: 10%;
-  
-}
-
-#correo,#clave{
-  margin-top: 20px;
-  height: 100px;
-  margin-bottom: 10%;
-}
-
-.imagen{
-  /*width: 440px;*/
-  width: 100%;
-  height:230px;
-  margin-top: 40px;
-}
-
-.informacion{
-  font-size: 29px;
-  color: white;
-  margin-top: 7%;
-}
-
-.titulo{
-  margin-top: 100px;
-  font-size: 40px;
-  color: white;
-}
-
-#ultimo {
-  color: #fff;
-  font-size: 37px;
-}
-
-footer {
-  margin-top: -50%;
-  color: #FFF;
-}
-
-footer a {
+#registrate a {
   font-weight: 700;
 }
-
 
 /*MODAL*/
 .modal {
