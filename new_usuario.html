@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Trivia</title>
+  <title>Registro de Usuario</title>
   <meta charset="UTF-8">
   <meta name="description" content="Ejemplo HTML5"/>
   <meta name="keywords" content="HTML5, CSS3, javascript"/>
@@ -20,16 +20,18 @@
     <div class="principal">
       <div class="container">
         <div class="row">
-          <div class="col-xs-12 col-md-12 imagen">
-            <img src="assets/img/logo.png" class="imagen" alt="">
+          <div class="col-sm-12 col-md-12 divs">
+            <img id="logo" src="assets/img/logo.png" alt="">
+            
           </div>
         </div>
-        <div class="row ">
+      
+         <div class="row ">
           <div class="col-xs-12 col-md-12">
             <input type="text" class="form-control" id="nick" placeholder="Ingrese Usuario">
           </div>
         </div>
-         <div class="row ">
+          <div class="row ">
           <div class="col-xs-12 col-md-12">
             <input type="text" class="form-control" id="nombre" placeholder="Ingrese Nombre">
           </div>
@@ -44,6 +46,15 @@
             <input type="text" class="form-control" id="clave" placeholder="Ingrese clave">
           </div>
         </div>
+        <div class="row">
+          <div class="col-xs-12 col-md-12 divs texto_img">
+            <h2>Subir imagen de Perfil</h2>
+          </div>
+        </div>
+        <div class="form-group">
+              <label for="recipient-name" class="control-label"></label>
+              <input  type="file"  id="foto">
+            </div>
         <div class="row">
           <div class="col-xs-12 col-md-12 divs">
             <button id="btn-sign-up"  type="button" class="btn btn-outline-light">Registrar Usuario</button>
