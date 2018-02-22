@@ -12,8 +12,34 @@ var config = {
   firebase.initializeApp(config);
 var db = firebase.database();
 
+//Autenticación para hacer uso del storage
+var authService = firebase.auth();
+//Base de datos de imagenes
+var dbFotos = firebase.storage();
+
 
 $(document).ready(function(){
+   cargaDatos();
+
+   
+// realizamos la autenticación anónima (debe estar activada en la consola de Firebase)
+  authService.signInAnonymously()
+    .catch(function(error) {
+      console.error('Detectado error de autenticación', error);
+    });
+
+  // asociamos el manejador de eventos sobre el INPUT FILE
+    document.getElementById('foto').addEventListener('change', function(evento){
+    evento.preventDefault();
+    //Obteniendo el nick del input del formulario
+    var nickName = $("#nick").val();
+    //Creando una variable archivo para guardar la foto temporalmente
+    var archivo  = evento.target.files[0];
+    //Subir archivo con la foto y el nombre del usuario
+    subirArchivo(archivo,nickName);
+  });
+
+
     $("#btn-login").click(function(){
         
         //Función ingresar usuario y contraseña
@@ -49,13 +75,15 @@ $(document).ready(function(){
       var nombre = $('#nombre').val();
       var email = $('#correo').val();
       var clave = $('#clave').val();
+      subirArchivo($('#foto').val(), $('#nick').val());
+      var foto = rutaFoto;
   //var password2 = $('#password2').val();
   // Creo un objeto para almacenar los datos de un usuario
       var usuario = new Object();
       usuario.nombre=nombre;
       usuario.correo = email;
       usuario.clave= clave;
-      console.log(usuario);
+      usuario.foto= foto;
 //llamo al campo referencia de usuarios de la base de datos que es nick 
 // guardo con set el objeto usuario con todos los datos de los usuarios
       usuarios.child(nick).set(usuario);
@@ -105,12 +133,12 @@ function cargaDatos(){
                       indice = i;
                   } 
                 }
-
                 //console.log(usuario[usr[indice]].correo)
-                $('#nombre').text(usuario[usr[indice]].nombre);
-    
-          });
-    };
+                $('#nombreUsuario').text(usuario[usr[indice]].nombre);
+               // $('#nickName').text(usr[indice]);
+                $('#fotoPerfil').attr('src',usuario[usr[indice]].foto)
+          })
+    }
 
 
 
