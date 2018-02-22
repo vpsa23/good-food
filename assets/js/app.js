@@ -4,7 +4,7 @@ $(document).ready(() => {
   inputSearch.click(function() {
     let list = `
     <div class="row">
-      <div class="col-sm-12">
+      <div class="col-sm-12" id="imagenes">
         <ul class="list-group">
           <li class="label">Busquedas Recomendadas</li>
           <li class="list-group-item">
@@ -56,32 +56,32 @@ $(document).ready(() => {
       console.log(categories);
       for (let i in categories) {
         let categorias = `
-          <div class="row">
-            <div class="col-sm-4 col-md-4 col-lg-4">
+          <div class="row" id="row1">
+            <div class="col-4 col-sm-1 col-md-4 col-lg-4">
               <h4>${categories[i][0].categories.name}</h4>
-              <img src="assets/img/delivery.jpg" alt="" />
+              <img id="img1" src="assets/img/delivery.jpg" alt="" />
             </div>
-            <div class="col-sm-4 col-md-4 col-lg-4">
+            <div class="col-4 col-sm-1 col-md-4 col-lg-4">
               <h4>${categories[i][5].categories.name}</h4>
-              <img src="assets/img/café.png" alt="" />
+              <img id="img2" src="assets/img/café.png" alt="" />
             </div>
-            <div class="col-sm-4 col-md-4 col-lg-4">
+            <div class="col-4 col-sm-1 col-md-4 col-lg-4">
               <h4>${categories[i][7].categories.name}</h4>
-              <img src="assets/img/breakfast.png" alt="" />
+              <img id="img3" src="assets/img/breakfast.png" alt="" />
             </div>
           </div>
-          <div class="row">
-            <div class="col-sm-4 col-md-4 col-lg-4">
+          <div class="row" id="row2">
+            <div class="col-4 col-sm-1 col-md-4 col-lg-4">
               <h4>${categories[i][8].categories.name}</h4>
-              <img src="assets/img/lunch.png" alt="" />
+              <img id="img4" src="assets/img/lunch.png" alt="" />
             </div>
-            <div class="col-sm-12">
+            <div class="col-4 col-sm-1 col-md-4 col-lg-4">
               <h4>${categories[i][9].categories.name}</h4>
-              <img src="assets/img/dinner.jpg" alt="" />
+              <img id="img5" src="assets/img/dinner.jpg" alt="" />
             </div>
-            <div class="col-sm-12">
+            <div class="col-4 col-sm-1 col-md-4 col-lg-4">
               <h4>${categories[i][10].categories.name}</h4>
-              <img src="assets/img/pubs.png" alt="" />
+              <img id="img6" src="assets/img/pubs.png" alt="" />
             </div>
           </div>
         `;
