@@ -1,13 +1,4 @@
-
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 9c2812607709b0d291e828fa357de19479ec3c6b
 $(document).ready(function(){
-   
-
-   
 // realizamos la autenticación anónima (debe estar activada en la consola de Firebase)
   authService.signInAnonymously()
     .catch(function(error) {
