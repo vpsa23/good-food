@@ -60,7 +60,6 @@ $(document).ready(() => {
             <div class="col-4 col-sm-1 col-md-4 col-lg-4">
               <h4>${categories[i][0].categories.name}</h4>
               <img id="img1" src="assets/img/delivery.jpg" alt="" />
-              <img class="images" src="assets/img/delivery.jpg" alt="" />
             </div>
             <div class="col-4 col-sm-1 col-md-4 col-lg-4">
               <h4>${categories[i][5].categories.name}</h4>
@@ -88,6 +87,10 @@ $(document).ready(() => {
         `;
         $('#containerCategories').append(categorias);
         }
+        /*evento click img delivery*/
+        $('#img2').click(function(){
+          
+        })
       }
   });
 
@@ -182,7 +185,6 @@ $(document).ready(() => {
             </div>
           </div>
         `;
-        console.log(comidas);
         $('#containerCuisines').append(comidas);
       }
     }
