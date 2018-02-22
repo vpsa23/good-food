@@ -59,11 +59,8 @@ $(document).ready(() => {
           <div class="row" id="row1">
             <div class="col-4 col-sm-1 col-md-4 col-lg-4">
               <h4>${categories[i][0].categories.name}</h4>
-<<<<<<< HEAD
               <img id="img1" src="assets/img/delivery.jpg" alt="" />
-=======
               <img class="images" src="assets/img/delivery.jpg" alt="" />
->>>>>>> bc8a6e536205ce1a2d5559e3963c90fd31828580
             </div>
             <div class="col-4 col-sm-1 col-md-4 col-lg-4">
               <h4>${categories[i][5].categories.name}</h4>
