@@ -86,13 +86,471 @@ $(document).ready(() => {
           </div>
         `;
         $('#containerCategories').append(categorias);
-        }
-        /*evento click img delivery*/
-        $('#img2').click(function(){
-          
-        })
       }
+      $('#img1').click(function(){
+        console.log('holi')
+        delivery();
+      })
+      $('#img2').click(function(){
+        console.log('holiwi');
+        coffe();
+      })
+      $('#img3').click(function(){
+        console.log('holaa');
+        breakfast();
+      })
+      $('#img4').click(function(){
+        console.log('holiwi');
+        lunch();
+      })
+      $('#img5').click(function(){
+        console.log('holiwi');
+        dinner();
+      })
+      $('#img6').click(function(){
+        console.log('holiwi');
+        pubs();
+      })
+    }
   });
+
+//llamamos a la api y nos devuelve solo por categoria en este caso delivery
+  function delivery() {
+    $.ajax({
+      type: "GET", //it's a GET request API
+      headers: {
+        'X-Zomato-API-Key': '8149c00360df56f4399c2cf208281f7a' //'5e26f0851bb93b15813c1f2b7af9f77a'
+      },
+      url: 'https://developers.zomato.com/api/v2.1/search?entity_id=94741&entity_type=zone&category=1',
+      dataType: 'json',
+      processData: true,
+      success: (restaurants) => {
+        console.log(restaurants);
+        for(let i in restaurants) {
+          let deli = `
+            <div class="row">
+              <div class="col-4 col-sm-1 col-md-4 col-lg-4">
+                <h4>${restaurants.restaurants[0].restaurant.name}</h4>
+                <img src="${restaurants.restaurants[0].restaurant.featured_image}" alt=""/>
+                <p>Cost for two: ${restaurants.restaurants[0].restaurant.average_cost_for_two}</p>
+                <p>Cuisines: ${restaurants.restaurants[0].restaurant.cuisines}</p>
+                <p>Location: ${restaurants.restaurants[0].restaurant.location.address}</p>
+                <p>Url: ${restaurants.restaurants[0].restaurant.url}</p>
+                <p>Rating: ${restaurants.restaurants[0].restaurant.user_rating.aggregate_rating}</p>
+              </div>
+            </div>
+            <div class="row">
+              <h4>${restaurants.restaurants[1].restaurant.name}</h4>
+              <img src="${restaurants.restaurants[1].restaurant.featured_image}" alt=""/>
+              <p>Cost for two: ${restaurants.restaurants[1].restaurant.average_cost_for_two}</p>
+              <p>Cuisines: ${restaurants.restaurants[1].restaurant.cuisines}</p>
+              <p>Location: ${restaurants.restaurants[1].restaurant.location.address}</p>
+              <p>Url: ${restaurants.restaurants[1].restaurant.url}</p>
+              <p>Rating: ${restaurants.restaurants[1].restaurant.user_rating.aggregate_rating}</p>
+            </div>
+            <div class="row">
+              <h4>${restaurants.restaurants[2].restaurant.name}</h4>
+              <img src="${restaurants.restaurants[2].restaurant.featured_image}" alt=""/>
+              <p>Cost for two: ${restaurants.restaurants[2].restaurant.average_cost_for_two}</p>
+              <p>Cuisines: ${restaurants.restaurants[2].restaurant.cuisines}</p>
+              <p>Location: ${restaurants.restaurants[2].restaurant.location.address}</p>
+              <p>Url: ${restaurants.restaurants[2].restaurant.url}</p>
+              <p>Rating: ${restaurants.restaurants[2].restaurant.user_rating.aggregate_rating}</p>
+            </div>
+            <div class="row">
+              <h4>${restaurants.restaurants[4].restaurant.name}</h4>
+              <img src="${restaurants.restaurants[4].restaurant.featured_image}" alt=""/>
+              <p>Cost for two: ${restaurants.restaurants[4].restaurant.average_cost_for_two}</p>
+              <p>Cuisines: ${restaurants.restaurants[4].restaurant.cuisines}</p>
+              <p>Location: ${restaurants.restaurants[4].restaurant.location.address}</p>
+              <p>Url: ${restaurants.restaurants[4].restaurant.url}</p>
+              <p>Rating: ${restaurants.restaurants[4].restaurant.user_rating.aggregate_rating}</p>
+            </div>
+            <div class="row">
+              <h4>${restaurants.restaurants[5].restaurant.name}</h4>
+              <img src="${restaurants.restaurants[5].restaurant.featured_image}" alt=""/>
+              <p>Cost for two: ${restaurants.restaurants[5].restaurant.average_cost_for_two}</p>
+              <p>Cuisines: ${restaurants.restaurants[5].restaurant.cuisines}</p>
+              <p>Location: ${restaurants.restaurants[5].restaurant.location.address}</p>
+              <p>Url: ${restaurants.restaurants[5].restaurant.url}</p>
+              <p>Rating: ${restaurants.restaurants[5].restaurant.user_rating.aggregate_rating}</p>
+            </div>
+          `;
+          //$('#containerModal').append(coffee);
+          console.log(deli);
+        }
+      }
+    });
+  }
+
+//llamamos a la api y nos devuelve solo por categoria en este caso cafe
+  function coffe() {
+    $.ajax({
+      type: "GET", //it's a GET request API
+      headers: {
+        'X-Zomato-API-Key': '8149c00360df56f4399c2cf208281f7a' //'5e26f0851bb93b15813c1f2b7af9f77a'
+      },
+      url: 'https://developers.zomato.com/api/v2.1/search?entity_id=94741&entity_type=zone&establishment_type=1',
+      dataType: 'json',
+      processData: true,
+      success: (restaurants) => {
+        console.log(restaurants);
+        for(let i in restaurants) {
+          let coffee = `
+            <div class="row">
+              <div class="col-4 col-sm-1 col-md-4 col-lg-4">
+                <h4>${restaurants.restaurants[0].restaurant.name}</h4>
+                <img src="${restaurants.restaurants[0].restaurant.featured_image}" alt=""/>
+                <p>Cost for two: ${restaurants.restaurants[0].restaurant.average_cost_for_two}</p>
+                <p>Cuisines: ${restaurants.restaurants[0].restaurant.cuisines}</p>
+                <p>Location: ${restaurants.restaurants[0].restaurant.location.address}</p>
+                <p>Url: ${restaurants.restaurants[0].restaurant.url}</p>
+                <p>Rating: ${restaurants.restaurants[0].restaurant.user_rating.aggregate_rating}</p>
+              </div>
+            </div>
+            <div class="row">
+              <h4>${restaurants.restaurants[1].restaurant.name}</h4>
+              <img src="${restaurants.restaurants[1].restaurant.featured_image}" alt=""/>
+              <p>Cost for two: ${restaurants.restaurants[1].restaurant.average_cost_for_two}</p>
+              <p>Cuisines: ${restaurants.restaurants[1].restaurant.cuisines}</p>
+              <p>Location: ${restaurants.restaurants[1].restaurant.location.address}</p>
+              <p>Url: ${restaurants.restaurants[1].restaurant.url}</p>
+              <p>Rating: ${restaurants.restaurants[1].restaurant.user_rating.aggregate_rating}</p>
+            </div>
+            <div class="row">
+              <h4>${restaurants.restaurants[2].restaurant.name}</h4>
+              <img src="${restaurants.restaurants[2].restaurant.featured_image}" alt=""/>
+              <p>Cost for two: ${restaurants.restaurants[2].restaurant.average_cost_for_two}</p>
+              <p>Cuisines: ${restaurants.restaurants[2].restaurant.cuisines}</p>
+              <p>Location: ${restaurants.restaurants[2].restaurant.location.address}</p>
+              <p>Url: ${restaurants.restaurants[2].restaurant.url}</p>
+              <p>Rating: ${restaurants.restaurants[2].restaurant.user_rating.aggregate_rating}</p>
+            </div>
+            <div class="row">
+              <h4>${restaurants.restaurants[3].restaurant.name}</h4>
+              <img src="${restaurants.restaurants[3].restaurant.featured_image}" alt=""/>
+              <p>Cost for two: ${restaurants.restaurants[3].restaurant.average_cost_for_two}</p>
+              <p>Cuisines: ${restaurants.restaurants[3].restaurant.cuisines}</p>
+              <p>Location: ${restaurants.restaurants[3].restaurant.location.address}</p>
+              <p>Url: ${restaurants.restaurants[3].restaurant.url}</p>
+              <p>Rating: ${restaurants.restaurants[3].restaurant.user_rating.aggregate_rating}</p>
+            </div>
+            <div class="row">
+              <h4>${restaurants.restaurants[4].restaurant.name}</h4>
+              <img src="${restaurants.restaurants[4].restaurant.featured_image}" alt=""/>
+              <p>Cost for two: ${restaurants.restaurants[4].restaurant.average_cost_for_two}</p>
+              <p>Cuisines: ${restaurants.restaurants[4].restaurant.cuisines}</p>
+              <p>Location: ${restaurants.restaurants[4].restaurant.location.address}</p>
+              <p>Url: ${restaurants.restaurants[4].restaurant.url}</p>
+              <p>Rating: ${restaurants.restaurants[4].restaurant.user_rating.aggregate_rating}</p>
+            </div>
+          `;
+          //$('#containerModal').append(coffee);
+          console.log(coffee);
+        }
+      }
+    });
+  }
+
+//llamamos a la api y nos devuelve solo por categoria en este caso desayunos
+  function breakfast() {
+    $.ajax({
+      type: "GET", //it's a GET request API
+      headers: {
+        'X-Zomato-API-Key': '8149c00360df56f4399c2cf208281f7a' //'5e26f0851bb93b15813c1f2b7af9f77a'
+      },
+      url: 'https://developers.zomato.com/api/v2.1/search?entity_id=94741&entity_type=zone&category=8',
+      dataType: 'json',
+      processData: true,
+      success: (restaurants) => {
+        console.log(restaurants);
+        for(let i in restaurants) {
+          let desayunos = `
+            <div class="row">
+              <div class="col-4 col-sm-1 col-md-4 col-lg-4">
+                <h4>${restaurants.restaurants[0].restaurant.name}</h4>
+                <img src="${restaurants.restaurants[0].restaurant.featured_image}" alt=""/>
+                <p>Cost for two: ${restaurants.restaurants[0].restaurant.average_cost_for_two}</p>
+                <p>Cuisines: ${restaurants.restaurants[0].restaurant.cuisines}</p>
+                <p>Location: ${restaurants.restaurants[0].restaurant.location.address}</p>
+                <p>Url: ${restaurants.restaurants[0].restaurant.url}</p>
+                <p>Rating: ${restaurants.restaurants[0].restaurant.user_rating.aggregate_rating}</p>
+              </div>
+            </div>
+            <div class="row">
+              <h4>${restaurants.restaurants[1].restaurant.name}</h4>
+              <img src="${restaurants.restaurants[1].restaurant.featured_image}" alt=""/>
+              <p>Cost for two: ${restaurants.restaurants[1].restaurant.average_cost_for_two}</p>
+              <p>Cuisines: ${restaurants.restaurants[1].restaurant.cuisines}</p>
+              <p>Location: ${restaurants.restaurants[1].restaurant.location.address}</p>
+              <p>Url: ${restaurants.restaurants[1].restaurant.url}</p>
+              <p>Rating: ${restaurants.restaurants[1].restaurant.user_rating.aggregate_rating}</p>
+            </div>
+            <div class="row">
+              <h4>${restaurants.restaurants[2].restaurant.name}</h4>
+              <img src="${restaurants.restaurants[2].restaurant.featured_image}" alt=""/>
+              <p>Cost for two: ${restaurants.restaurants[2].restaurant.average_cost_for_two}</p>
+              <p>Cuisines: ${restaurants.restaurants[2].restaurant.cuisines}</p>
+              <p>Location: ${restaurants.restaurants[2].restaurant.location.address}</p>
+              <p>Url: ${restaurants.restaurants[2].restaurant.url}</p>
+              <p>Rating: ${restaurants.restaurants[2].restaurant.user_rating.aggregate_rating}</p>
+            </div>
+            <div class="row">
+              <h4>${restaurants.restaurants[3].restaurant.name}</h4>
+              <img src="${restaurants.restaurants[3].restaurant.featured_image}" alt=""/>
+              <p>Cost for two: ${restaurants.restaurants[3].restaurant.average_cost_for_two}</p>
+              <p>Cuisines: ${restaurants.restaurants[3].restaurant.cuisines}</p>
+              <p>Location: ${restaurants.restaurants[3].restaurant.location.address}</p>
+              <p>Url: ${restaurants.restaurants[3].restaurant.url}</p>
+              <p>Rating: ${restaurants.restaurants[3].restaurant.user_rating.aggregate_rating}</p>
+            </div>
+            <div class="row">
+              <h4>${restaurants.restaurants[4].restaurant.name}</h4>
+              <img src="${restaurants.restaurants[4].restaurant.featured_image}" alt=""/>
+              <p>Cost for two: ${restaurants.restaurants[4].restaurant.average_cost_for_two}</p>
+              <p>Cuisines: ${restaurants.restaurants[4].restaurant.cuisines}</p>
+              <p>Location: ${restaurants.restaurants[4].restaurant.location.address}</p>
+              <p>Url: ${restaurants.restaurants[4].restaurant.url}</p>
+              <p>Rating: ${restaurants.restaurants[4].restaurant.user_rating.aggregate_rating}</p>
+            </div>
+          `;
+          //$('#containerModal').append(coffee);
+          console.log(desayunos);
+        }
+      }
+    });
+  }
+
+  //llamamos a la api y nos devuelve solo por categoria en este caso almiuerzo
+  function lunch() {
+    $.ajax({
+      type: "GET", //it's a GET request API
+      headers: {
+        'X-Zomato-API-Key': '8149c00360df56f4399c2cf208281f7a' //'5e26f0851bb93b15813c1f2b7af9f77a'
+      },
+      url: 'https://developers.zomato.com/api/v2.1/search?entity_id=94741&entity_type=zone&category=9',
+      dataType: 'json',
+      processData: true,
+      success: (restaurants) => {
+        console.log(restaurants);
+        for(let i in restaurants) {
+          let almuerzo = `
+            <div class="row">
+              <div class="col-4 col-sm-1 col-md-4 col-lg-4">
+                <h4>${restaurants.restaurants[15].restaurant.name}</h4>
+                <img src="${restaurants.restaurants[15].restaurant.featured_image}" alt=""/>
+                <p>Cost for two: ${restaurants.restaurants[15].restaurant.average_cost_for_two}</p>
+                <p>Cuisines: ${restaurants.restaurants[15].restaurant.cuisines}</p>
+                <p>Location: ${restaurants.restaurants[15].restaurant.location.address}</p>
+                <p>Url: ${restaurants.restaurants[15].restaurant.url}</p>
+                <p>Rating: ${restaurants.restaurants[15].restaurant.user_rating.aggregate_rating}</p>
+              </div>
+            </div>
+            <div class="row">
+              <h4>${restaurants.restaurants[16].restaurant.name}</h4>
+              <img src="${restaurants.restaurants[16].restaurant.featured_image}" alt=""/>
+              <p>Cost for two: ${restaurants.restaurants[16].restaurant.average_cost_for_two}</p>
+              <p>Cuisines: ${restaurants.restaurants[16].restaurant.cuisines}</p>
+              <p>Location: ${restaurants.restaurants[16].restaurant.location.address}</p>
+              <p>Url: ${restaurants.restaurants[16].restaurant.url}</p>
+              <p>Rating: ${restaurants.restaurants[16].restaurant.user_rating.aggregate_rating}</p>
+            </div>
+            <div class="row">
+              <h4>${restaurants.restaurants[17].restaurant.name}</h4>
+              <img src="${restaurants.restaurants[17].restaurant.featured_image}" alt=""/>
+              <p>Cost for two: ${restaurants.restaurants[17].restaurant.average_cost_for_two}</p>
+              <p>Cuisines: ${restaurants.restaurants[17].restaurant.cuisines}</p>
+              <p>Location: ${restaurants.restaurants[17].restaurant.location.address}</p>
+              <p>Url: ${restaurants.restaurants[17].restaurant.url}</p>
+              <p>Rating: ${restaurants.restaurants[17].restaurant.user_rating.aggregate_rating}</p>
+            </div>
+            <div class="row">
+              <h4>${restaurants.restaurants[18].restaurant.name}</h4>
+              <img src="${restaurants.restaurants[18].restaurant.featured_image}" alt=""/>
+              <p>Cost for two: ${restaurants.restaurants[18].restaurant.average_cost_for_two}</p>
+              <p>Cuisines: ${restaurants.restaurants[18].restaurant.cuisines}</p>
+              <p>Location: ${restaurants.restaurants[18].restaurant.location.address}</p>
+              <p>Url: ${restaurants.restaurants[18].restaurant.url}</p>
+              <p>Rating: ${restaurants.restaurants[18].restaurant.user_rating.aggregate_rating}</p>
+            </div>
+            <div class="row">
+              <h4>${restaurants.restaurants[19].restaurant.name}</h4>
+              <img src="${restaurants.restaurants[19].restaurant.featured_image}" alt=""/>
+              <p>Cost for two: ${restaurants.restaurants[19].restaurant.average_cost_for_two}</p>
+              <p>Cuisines: ${restaurants.restaurants[19].restaurant.cuisines}</p>
+              <p>Location: ${restaurants.restaurants[19].restaurant.location.address}</p>
+              <p>Url: ${restaurants.restaurants[19].restaurant.url}</p>
+              <p>Rating: ${restaurants.restaurants[19].restaurant.user_rating.aggregate_rating}</p>
+            </div>
+          `;
+          //$('#containerModal').append(coffee);
+          console.log(almuerzo);
+        }
+      }
+    });
+  }
+
+  //llamamos a la api y nos devuelve solo por categoria en este caso cena
+  function dinner() {
+    $.ajax({
+      type: "GET", //it's a GET request API
+      headers: {
+        'X-Zomato-API-Key': '8149c00360df56f4399c2cf208281f7a' //'5e26f0851bb93b15813c1f2b7af9f77a'
+      },
+      url: 'https://developers.zomato.com/api/v2.1/search?entity_id=94741&entity_type=zone&category=10',
+      dataType: 'json',
+      processData: true,
+      success: (restaurants) => {
+        console.log(restaurants);
+        for(let i in restaurants) {
+          let cena = `
+            <div class="row">
+              <div class="col-4 col-sm-1 col-md-4 col-lg-4">
+                <h4>${restaurants.restaurants[19].restaurant.name}</h4>
+                <img src="${restaurants.restaurants[19].restaurant.featured_image}" alt=""/>
+                <p>Cost for two: ${restaurants.restaurants[19].restaurant.average_cost_for_two}</p>
+                <p>Cuisines: ${restaurants.restaurants[19].restaurant.cuisines}</p>
+                <p>Location: ${restaurants.restaurants[19].restaurant.location.address}</p>
+                <p>Url: ${restaurants.restaurants[19].restaurant.url}</p>
+                <p>Rating: ${restaurants.restaurants[19].restaurant.user_rating.aggregate_rating}</p>
+              </div>
+            </div>
+            <div class="row">
+              <h4>${restaurants.restaurants[18].restaurant.name}</h4>
+              <img src="${restaurants.restaurants[18].restaurant.featured_image}" alt=""/>
+              <p>Cost for two: ${restaurants.restaurants[18].restaurant.average_cost_for_two}</p>
+              <p>Cuisines: ${restaurants.restaurants[18].restaurant.cuisines}</p>
+              <p>Location: ${restaurants.restaurants[18].restaurant.location.address}</p>
+              <p>Url: ${restaurants.restaurants[18].restaurant.url}</p>
+              <p>Rating: ${restaurants.restaurants[18].restaurant.user_rating.aggregate_rating}</p>
+            </div>
+            <div class="row">
+              <h4>${restaurants.restaurants[17].restaurant.name}</h4>
+              <img src="${restaurants.restaurants[17].restaurant.featured_image}" alt=""/>
+              <p>Cost for two: ${restaurants.restaurants[17].restaurant.average_cost_for_two}</p>
+              <p>Cuisines: ${restaurants.restaurants[17].restaurant.cuisines}</p>
+              <p>Location: ${restaurants.restaurants[17].restaurant.location.address}</p>
+              <p>Url: ${restaurants.restaurants[17].restaurant.url}</p>
+              <p>Rating: ${restaurants.restaurants[17].restaurant.user_rating.aggregate_rating}</p>
+            </div>
+            <div class="row">
+              <h4>${restaurants.restaurants[16].restaurant.name}</h4>
+              <img src="${restaurants.restaurants[16].restaurant.featured_image}" alt=""/>
+              <p>Cost for two: ${restaurants.restaurants[16].restaurant.average_cost_for_two}</p>
+              <p>Cuisines: ${restaurants.restaurants[16].restaurant.cuisines}</p>
+              <p>Location: ${restaurants.restaurants[16].restaurant.location.address}</p>
+              <p>Url: ${restaurants.restaurants[16].restaurant.url}</p>
+              <p>Rating: ${restaurants.restaurants[16].restaurant.user_rating.aggregate_rating}</p>
+            </div>
+            <div class="row">
+              <h4>${restaurants.restaurants[15].restaurant.name}</h4>
+              <img src="${restaurants.restaurants[15].restaurant.featured_image}" alt=""/>
+              <p>Cost for two: ${restaurants.restaurants[15].restaurant.average_cost_for_two}</p>
+              <p>Cuisines: ${restaurants.restaurants[15].restaurant.cuisines}</p>
+              <p>Location: ${restaurants.restaurants[15].restaurant.location.address}</p>
+              <p>Url: ${restaurants.restaurants[15].restaurant.url}</p>
+              <p>Rating: ${restaurants.restaurants[15].restaurant.user_rating.aggregate_rating}</p>
+            </div>
+          `;
+          //$('#containerModal').append(coffee);
+          console.log(cena);
+        }
+      }
+    });
+  }
+
+  //llamamos a la api y nos devuelve solo por categoria en este caso pubs y bars
+  function pubs() {
+    $.ajax({
+      type: "GET", //it's a GET request API
+      headers: {
+        'X-Zomato-API-Key': '8149c00360df56f4399c2cf208281f7a' //'5e26f0851bb93b15813c1f2b7af9f77a'
+      },
+      url: 'https://developers.zomato.com/api/v2.1/search?entity_id=94741&entity_type=zone&category=11',
+      dataType: 'json',
+      processData: true,
+      success: (restaurants) => {
+        console.log(restaurants);
+        for(let i in restaurants) {
+          let pub = `
+            <div class="row text-center">
+              <div class="col-10 col-sm-10 col-md-10 col-lg-10">
+                <img src="${restaurants.restaurants[10].restaurant.featured_image}" class="thumbnail imgModal" alt=""/>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-group">
+                  <li class="list-group-item">${restaurants.restaurants[10].restaurant.name}</li>
+                  <li class="list-group-item">Cost for two: ${restaurants.restaurants[10].restaurant.average_cost_for_two}</li>
+                  <li class="list-group-item">Cuisines: ${restaurants.restaurants[10].restaurant.cuisines}</li>
+                  <li class="list-group-item">Location: ${restaurants.restaurants[10].restaurant.location.address}</li>
+                  <li class="list-group-item">Url: ${restaurants.restaurants[10].restaurant.url}</li>
+                  <li class="list-group-item">Rating: ${restaurants.restaurants[10].restaurant.user_rating.aggregate_rating}</li>
+                </ul>
+              </div>
+            </div>
+            <div class="row text-center">
+              <div class="col-10 col-sm-10 col-md-10 col-lg-10">
+                <img src="${restaurants.restaurants[11].restaurant.featured_image}" alt=""/>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-group">
+                  <li class="list-group-item">${restaurants.restaurants[11].restaurant.name}</li>
+                  <li class="list-group-item">Cost for two: ${restaurants.restaurants[11].restaurant.average_cost_for_two}</li>
+                  <li class="list-group-item">Cuisines: ${restaurants.restaurants[11].restaurant.cuisines}</li>
+                  <li class="list-group-item">Location: ${restaurants.restaurants[11].restaurant.location.address}</li>
+                  <li class="list-group-item">Url: ${restaurants.restaurants[11].restaurant.url}</li>
+                  <li class="list-group-item">Rating: ${restaurants.restaurants[11].restaurant.user_rating.aggregate_rating}</li>
+                </ul>
+              </div>
+            <div class="row text-center">
+              <div class="col-10 col-sm-10 col-md-10 col-lg-10">
+                <img src="${restaurants.restaurants[12].restaurant.featured_image}" alt=""/>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-group">
+                  <li class="list-group-item">${restaurants.restaurants[12].restaurant.name}</li>
+                  <li class="list-group-item">Cost for two: ${restaurants.restaurants[12].restaurant.average_cost_for_two}<li>
+                  <li class="list-group-item">Cuisines: ${restaurants.restaurants[12].restaurant.cuisines}</li>
+                  <li class="list-group-item">Location: ${restaurants.restaurants[12].restaurant.location.address}</li>
+                  <li class="list-group-item">Url: ${restaurants.restaurants[12].restaurant.url}</li>
+                  <li class="list-group-item">Rating: ${restaurants.restaurants[12].restaurant.user_rating.aggregate_rating}</li>
+                </ul>
+              </div>
+            <div class="row text-center">
+              <div class="col-sm-10 col-md-10 col-lg-10">
+                <img src="${restaurants.restaurants[13].restaurant.featured_image}" alt=""/>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-group">
+                  <li class="list-group-item">${restaurants.restaurants[13].restaurant.name}</li>
+                  <li class="list-group-item">Cost for two: ${restaurants.restaurants[13].restaurant.average_cost_for_two}<li>
+                  <li class="list-group-item">Cuisines: ${restaurants.restaurants[13].restaurant.cuisines}</li>
+                  <li class="list-group-item">Location: ${restaurants.restaurants[13].restaurant.location.address}</li>
+                  <li class="list-group-item">Url: ${restaurants.restaurants[13].restaurant.url}</li>
+                  <li class="list-group-item">Rating: ${restaurants.restaurants[13].restaurant.user_rating.aggregate_rating}</li>
+                </ul>
+              </div>
+            <div class="row text-center">
+              <div class="col-sm-10 col-md-10 col-lg-10">
+                <img src="${restaurants.restaurants[14].restaurant.featured_image}" alt=""/>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-group">
+                  <li class="list-group-item">${restaurants.restaurants[14].restaurant.name}</li>
+                  <li class="list-group-item">Cost for two: ${restaurants.restaurants[14].restaurant.average_cost_for_two}</li>
+                  <li class="list-group-item">Cuisines: ${restaurants.restaurants[14].restaurant.cuisines}</li>
+                  <li class="list-group-item">Location: ${restaurants.restaurants[14].restaurant.location.address}</li>
+                  <li class="list-group-item">Url: ${restaurants.restaurants[14].restaurant.url}</li>
+                  <li class="list-group-item">Rating: ${restaurants.restaurants[14].restaurant.user_rating.aggregate_rating}</li>
+                </ul>
+              </div>
+          `;
+          $('.modal-content').append(pub);
+          //console.log(pub);
+        }
+      }
+    });
+  }
 
 
 //traemos los tipos de comida
@@ -235,6 +693,7 @@ $.ajax({
 
 
 //deberia arrojar cafe
+/*
   $.ajax({
     type: "GET", //it's a GET request API
     headers: {
@@ -253,6 +712,6 @@ $.ajax({
       console.log(data);
     }
   });
-
+*/
 });
 
