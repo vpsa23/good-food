@@ -1,4 +1,9 @@
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 9c2812607709b0d291e828fa357de19479ec3c6b
 $(document).ready(function(){
    
 
