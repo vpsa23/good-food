@@ -66,36 +66,35 @@ $(document).ready(function(){
         })
     })
 
-    // Rescatar inormación del formulario crear perfil
-    $('#btn-sign-up').click(function(){
- // haciendo referencia a el campo usuarios de la base de datos
-      var usuarios = db.ref('usuarios');
+  // Rescatar información del formulario crear perfil
+  $('#btn-sign-up').click(function(){
+// haciendo referencia a el campo usuarios de la base de datos
+    var usuarios = db.ref('usuarios');
      
       var nick = $('#nick').val();
       var nombre = $('#nombre').val();
-      var email = $('#correo').val();
+      var correo = $('#correo').val();
       var clave = $('#clave').val();
-      subirArchivo($('#foto').val(), $('#nick').val());
-      var foto = rutaFoto;
-  //var password2 = $('#password2').val();
-  // Creo un objeto para almacenar los datos de un usuario
-      var usuario = new Object();
-      usuario.nombre=nombre;
-      usuario.correo = email;
-      usuario.clave= clave;
-      usuario.foto= foto;
-//llamo al campo referencia de usuarios de la base de datos que es nick 
-// guardo con set el objeto usuario con todos los datos de los usuarios
-      usuarios.child(nick).set(usuario);
-
-
-      document.location.replace('restaurant.html')
-
-    })
-
   
-})    
+// Creo un objeto para almacenar los datos de un usuario
+      var usuario = new Object();
+      usuario.nick=nick;
+      usuario.nombre=nombre;
+      usuario.correo = correo;
+      usuario.clave= clave;
+      usuario.foto=rutaFoto;
+      console.log(rutaFoto);
+//Llamo al campo referencia de usuarios de la base de datos que es nick 
+// Guardo con set el objeto usuario con todos los datos de los usuarios
 
+      usuarios.child(nick).set(usuario);
+      sessionStorage['usuarioLogueado'] = nick;
+      alert('usuarios registrado con exito')
+      document.location.replace('restaurant.html')
+      //cargaDatos();
+    })
+  
+});
 
 // función que se encargará de subir el archivo
     function subirArchivo(archivo, nick) {
@@ -109,11 +108,12 @@ $(document).ready(function(){
           console.log('Error al subir el archivo', error);
         },
         function(){
-          console.log('Subida completada');
           //mensajeFinalizado(uploadTask.snapshot.downloadURL, uploadTask.snapshot.totalBytes);
           //Guardo la ruta donde quedo registrada la foto en el servidor
           //snapshot.downloadURL es el equivalente a ss recasta la foto
           rutaFoto = uploadTask.snapshot.downloadURL
+          console.log('Subida completada: '+rutaFoto);
+          
         }
       );
     }
@@ -133,10 +133,10 @@ function cargaDatos(){
                       indice = i;
                   } 
                 }
-                //console.log(usuario[usr[indice]].correo)
+                console.log("ssss;"+usuario[usr[indice]].foto)
                 $('#nombreUsuario').text(usuario[usr[indice]].nombre);
                // $('#nickName').text(usr[indice]);
-                $('#fotoPerfil').attr('src',usuario[usr[indice]].foto)
+                $('#foto').attr('src',usuario[usr[indice]].foto)
           })
     }
 
